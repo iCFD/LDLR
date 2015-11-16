@@ -13,18 +13,18 @@ clear; close all; clc;
 
 %% Parameters
       v = 1.00;	% Advection Speed
-    CFL = 0.65;	% CFL condition
-   tEnd = 20.0;	% final time
-     nx = 400;	% number of cells
+    CFL = 0.60;	% CFL condition
+   tEnd = 2.00;	% final time
+     nx = 100;	% number of cells
      
 % Build mesh
 a=-1; b=1; dx=(b-a)/nx; x=a+dx/2:dx:b; q=1.4; tol=0.1*dx^q;
 
 % Build IC
-ICtest = 2;
+ICtest = 1;
 switch ICtest
     case 1
-        u0 = CommonIC(x,8); % Choose between 1~9 cases
+        u0 = CommonIC(x,3); % Choose between 1~9 cases
     case 2
         u0 = TestingIC(x);
     otherwise
